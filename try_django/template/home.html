@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %} 
+
+{% for a in blog_list %}
+	{% include "standard.html" with blog_post=a truncate=True details=True %}
+{% endfor %}
+
+ {% endblock %}
+

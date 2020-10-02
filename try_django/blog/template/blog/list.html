@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} List {% endblock %}
+
+{% block content %} 
+	
+	<div class="row">	
+	{% for object in objects_list %}
+		{% include "standard.html" with blog_post=object truncate=True details=False %}
+	{% endfor %}
+	</div>
+
+ {% endblock %}
+

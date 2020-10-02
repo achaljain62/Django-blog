@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<div class="row">
+	<div class="col-12 col-10 mx-auto mb-5">
+		{% if query%}
+		<p class="lead alert alert-warning text-dark"> You searched for {{query}}</p>
+		{% else %}
+		<p class="lead alert alert-danger text-dark"> Search bar is blank</p>
+		{% endif %}
+		{% for blog_items in blog_list %}
+			{% include "standard.html" with blog_post=blog_items truncate=True details=False %}
+		{% endfor %}	
+	</div>
+</div>
+{% endblock %}
+
